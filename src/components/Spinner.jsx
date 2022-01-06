@@ -2,9 +2,9 @@ import { FaSpinner } from 'react-icons/fa'
 
 const Spinner = () => {
     return (
-        <div class="loader">
+        <div className='loader'>
             <div>
-                <FaSpinner size={30} />
+                <FaSpinner size={60} className='' />
             </div>
         </div>
     )

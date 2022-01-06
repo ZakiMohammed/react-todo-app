@@ -1,7 +1,18 @@
-const TaskItem = () => {
+import { FaTimes } from 'react-icons/fa';
+import Button from '../shared/Button'
+
+const TaskItem = ({ task }) => {
+
+    const handleRemoveTask = (e) => {
+        console.log(task);
+    }
+
     return (
-        <div>
-            Task Item
+        <div className='card'>
+            <Button className='btn-remove' handleClick={handleRemoveTask}>
+                <FaTimes />
+            </Button>
+            <p>{task.title}</p>
         </div>
     )
 }

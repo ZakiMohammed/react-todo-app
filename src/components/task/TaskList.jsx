@@ -1,8 +1,12 @@
-const TaskList = () => {
+import TaskItem from './TaskItem'
+
+const TaskList = ({ tasks }) => {
     return (
-        <div>
-            Task List
-        </div>
+        <div className='card-holder'>
+            {tasks.map(task => (
+                <TaskItem key={task._id} task={task} />                
+            ))}
+        </div>  
     )
 }
 

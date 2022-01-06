@@ -31,10 +31,12 @@
   font-family: "Poppins", sans-serif;
   color: #2d3436;
 }
+
 body {
   background-color: #dfe6e9;
   margin: 0;
 }
+
 .btn-back {
   display: inline-block;
   padding: 5px 10px;
@@ -42,9 +44,11 @@ body {
   text-decoration: none;
   border-radius: 10px;
 }
+
 .btn-back:hover {
   background-color: #dfe6e9;
 }
+
 .d-none {
   display: none !important;
 }
@@ -54,27 +58,32 @@ body {
 .container {
   margin: 50px 20px;
 }
-.container > h1 {
+
+.container>h1 {
   text-align: center;
   color: #e84393;
   margin: 0;
   margin-bottom: 5px;
 }
-.container > h5 {
+
+.container>h5 {
   text-align: center;
   margin: 0;
   margin-bottom: 20px;
 }
-.container > h5 a {
+
+.container>h5 a {
   text-decoration: none;
   padding: 0.5rem;
 }
+
 /* medium to tablet */
 @media (min-width: 900px) and (max-width: 1300px) {
   .container {
     margin: 50px 100px;
   }
 }
+
 /* wide screen */
 @media (min-width: 1301px) {
   .container {
@@ -88,6 +97,7 @@ body {
   display: flex;
   margin-bottom: 10px;
 }
+
 .form input {
   flex-basis: 90%;
   height: 40px;
@@ -97,9 +107,11 @@ body {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .form input:focus-visible {
   outline: #b2bec3 auto 1px;
 }
+
 .form button {
   flex-basis: 10%;
   color: #fff;
@@ -109,9 +121,11 @@ body {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form button:hover {
   background-color: #fd79a8;
 }
+
 .form button i {
   color: #fff;
   font-size: 18px;
@@ -125,14 +139,17 @@ body {
   padding: 10px 15px;
   margin-bottom: 10px;
 }
+
 .card h4 {
   margin: 0;
   margin-bottom: 10px;
 }
+
 .card p {
   margin: 0;
   font-size: 14px;
 }
+
 .card .btn-remove {
   background-color: #ff7675;
   border: 1px solid #ff7675;
@@ -141,17 +158,23 @@ body {
   border-radius: 10px;
   float: right;
   margin-left: 10px;
+  cursor: pointer;
 }
+
 .card .btn-remove:hover {
   background-color: #fab1a0;
   border: 1px solid #fab1a0;
 }
-.card .btn-remove i {
-  color: #fff;
+
+.card .btn-remove svg {
+  vertical-align: middle;
+  fill: #fff;
 }
+
 .card-holder {
   margin-top: 20px;
 }
+
 .card-holder .card:last-child {
   margin-bottom: 0;
 }
@@ -164,6 +187,7 @@ body {
   font-size: 14px;
   padding: 50px 0;
 }
+
 .empty i {
   display: block;
   color: #aaa;
@@ -182,6 +206,7 @@ body {
   text-align: right;
   width: 100%;
 }
+
 .btn-clear i {
   color: #777;
 }
@@ -198,14 +223,17 @@ body {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.loader i {
+
+.loader svg {
   animation: spin infinite 2s linear;
-  color: #e84393;
+  fill: #e84393;
 }
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

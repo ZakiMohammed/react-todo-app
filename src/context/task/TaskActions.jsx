@@ -21,7 +21,6 @@ export const add = async (task) => {
     return response.data
 };
 
-
 export const remove = async (id) => {
     const response = await taskAxios.delete(`${id}`, { method: 'DELETE' })
     return response.data
