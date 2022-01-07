@@ -4,5 +4,4 @@ export const TASK_CONSTANTS = {
     REMOVE: 'REMOVE',
     REMOVE_ALL: 'REMOVE_ALL',
     SET_TASK: 'SET_TASK',
-    SET_LOADING: 'SET_LOADING',
 }

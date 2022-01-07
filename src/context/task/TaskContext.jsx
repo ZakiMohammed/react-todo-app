@@ -8,7 +8,6 @@ export const TaskProvider = ({ children }) => {
     const initialState = {
         task: {},
         tasks: [],
-        loading: false
     }
 
     const [state, dispatch] = useReducer(taskReducer, initialState)

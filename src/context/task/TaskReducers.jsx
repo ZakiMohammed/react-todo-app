@@ -27,11 +27,6 @@ export const taskReducer = (state, { type, payload }) => {
                 ...state,
                 task: payload,
             }
-        case TASK_CONSTANTS.SET_LOADING:
-            return {
-                ...state,
-                loading: payload,
-            }
         default:
             return state
     }

@@ -3,12 +3,13 @@ import Header from './components/Header';
 import NotFound from './pages/NotFound';
 import About from './pages/About';
 import Home from './pages/Home';
-import { TaskProvider } from './context/task/TaskContext';
+import Spinner from './components/Spinner';
+import { SpinnerProvider } from './context/spinner/SpinnerContext';
 
 function App() {
 	return (
 		<>
-			<TaskProvider>
+			<SpinnerProvider>
 				<div className="container">
 					<Router>
 						<Header />
@@ -21,7 +22,8 @@ function App() {
 						</Routes>
 					</Router>
 				</div>
-			</TaskProvider>
+				<Spinner />
+			</SpinnerProvider>
 		</>
 	);
 }
