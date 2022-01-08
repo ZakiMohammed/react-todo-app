@@ -1,28 +1,28 @@
-import { TASK_CONSTANTS } from './TaskConstants'
+import TaskConstants from './TaskConstants'
 
 export const taskReducer = (state, { type, payload }) => {
     switch (type) {
-        case TASK_CONSTANTS.GET_ALL:
+        case TaskConstants.GET_ALL:
             return {
                 ...state,
                 tasks: payload,
             }
-        case TASK_CONSTANTS.ADD:
+        case TaskConstants.ADD:
             return {
                 ...state,
-                tasks: [...payload, ...state.tasks],
+                tasks: [payload, ...state.tasks],
             }
-        case TASK_CONSTANTS.REMOVE:
+        case TaskConstants.REMOVE:
             return {
                 ...state,
                 tasks: state.tasks.filter(i => i._id !== payload._id),
             }
-        case TASK_CONSTANTS.REMOVE_ALL:
+        case TaskConstants.REMOVE_ALL:
             return {
                 ...state,
                 tasks: [],
             }
-        case TASK_CONSTANTS.SET_TASK:
+        case TaskConstants.SET_TASK:
             return {
                 ...state,
                 task: payload,

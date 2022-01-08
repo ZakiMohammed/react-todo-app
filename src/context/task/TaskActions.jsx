@@ -6,12 +6,12 @@ const taskAxios = axios.create({
     baseURL: `${API_URL}/api/todos/`
 })
 
-export const getAll = async () => {
+const getAll = async () => {
     const response = await taskAxios.get()
     return response.data
 };
 
-export const add = async (task) => {
+const add = async (task) => {
     const response = await taskAxios.post('', task, {
         method: 'POST',
         headers: {
@@ -21,12 +21,19 @@ export const add = async (task) => {
     return response.data
 };
 
-export const remove = async (id) => {
+const remove = async (id) => {
     const response = await taskAxios.delete(`${id}`, { method: 'DELETE' })
     return response.data
 };
 
-export const removeAll = async () => {
+const removeAll = async () => {
     const response = await taskAxios.delete('', { method: 'DELETE' })
     return response.data
 };
+
+export default {
+    getAll,
+    add,
+    remove,
+    removeAll
+}

@@ -1,8 +1,15 @@
+import { NavLink } from 'react-router-dom'
+import Card from '../components/shared/Card'
+
 const About = () => {
     return (
-        <div>
-            About
-        </div>
+        <>
+            <Card>
+                <h4>About</h4>
+                <p>Todo Application using React. ❤️</p>
+            </Card>
+            <NavLink className='btn-back' to={'/'}>Go Back</NavLink>
+        </>
     )
 }
 

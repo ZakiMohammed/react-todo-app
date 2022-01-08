@@ -2,8 +2,8 @@ import { useContext, useEffect } from 'react'
 import TaskItem from './TaskItem'
 import TaskContext from '../../context/task/TaskContext'
 import SpinnerContext from '../../context/spinner/SpinnerContext'
-import { TASK_CONSTANTS } from '../../context/task/TaskConstants'
-import * as TaskActions from '../../context/task/TaskActions'
+import TaskConstants from '../../context/task/TaskConstants'
+import TaskActions from '../../context/task/TaskActions'
 
 const TaskList = () => {
 
@@ -18,7 +18,7 @@ const TaskList = () => {
                 const data = await TaskActions.getAll()
 
                 dispatch({
-                    type: TASK_CONSTANTS.GET_ALL,
+                    type: TaskConstants.GET_ALL,
                     payload: data
                 })
 
