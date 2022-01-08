@@ -31,7 +31,7 @@ const TaskList = () => {
 
         getTasks()
 
-    }, [dispatch])
+    }, [dispatch, setLoading])
 
     return (
         <div className='card-holder'>
