@@ -6,7 +6,7 @@ const TaskContext = createContext()
 export const TaskProvider = ({ children }) => {
 
     const initialState = {
-        task: {},
+        task: null,
         tasks: [],
     }
 

@@ -12,6 +12,12 @@ export const taskReducer = (state, { type, payload }) => {
                 ...state,
                 tasks: [payload, ...state.tasks],
             }
+        case TaskConstants.UPDATE:
+            return {
+                ...state,
+                task: null,
+                tasks: state.tasks.map(i => i._id === payload._id ? i = payload : i),
+            }
         case TaskConstants.REMOVE:
             return {
                 ...state,

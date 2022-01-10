@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaPencilAlt } from 'react-icons/fa';
 import Button from '../shared/Button'
 import TaskContext from '../../context/task/TaskContext';
 import TaskConstants from '../../context/task/TaskConstants';
@@ -26,11 +26,17 @@ const TaskItem = ({ task }) => {
             setLoading(false)
         }
     }
+    const handleEditTask = (e) => {
+        dispatch({ type: TaskConstants.SET_TASK, payload: task })
+    }
 
     return (
         <Card>
             <Button className='btn-remove' handleClick={handleRemoveTask}>
                 <FaTimes />
+            </Button>
+            <Button className='btn-edit' handleClick={handleEditTask}>
+                <FaPencilAlt />
             </Button>
             <p>{task.title}</p>
         </Card>

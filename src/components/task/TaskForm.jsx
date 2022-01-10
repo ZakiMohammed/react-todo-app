@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import Button from '../shared/Button'
 import TaskContext from '../../context/task/TaskContext'
@@ -9,8 +9,14 @@ import TaskActions from '../../context/task/TaskActions'
 const TaskForm = () => {
 
     const [title, setTitle] = useState('')
-    const { dispatch } = useContext(TaskContext)
+    const { task, dispatch } = useContext(TaskContext)
     const { setLoading } = useContext(SpinnerContext)
+
+    useEffect(() => {
+        if (task) {
+            setTitle(task.title)
+        }        
+    }, [task])
 
     const handleTitleChange = (e) => setTitle(e.target.value)
     const handleSubmit = async (e) => {
@@ -22,21 +28,25 @@ const TaskForm = () => {
                 return;
             }
 
-            const task = { title };
-
             setLoading(true)
 
-            const newTask = await TaskActions.add(task)
+            if (task) {
+                const dto = { ...task, title }
+                const updatedTask = await TaskActions.update(task._id, dto)
 
-            dispatch({ type: TaskConstants.ADD, payload: newTask })
+                dispatch({ type: TaskConstants.UPDATE, payload: updatedTask })
+            } else {
+                const dto = { title };
+                const newTask = await TaskActions.add(dto)
 
-            setLoading(false)
-            setTitle('')
+                dispatch({ type: TaskConstants.ADD, payload: newTask })
+            }
 
         } catch (error) {
             window.alert(`Error Occurred: ${error.message}`)
         } finally {
             setLoading(false)
+            setTitle('')
         }
     }
 

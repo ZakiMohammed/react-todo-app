@@ -151,7 +151,8 @@ body {
   font-size: 14px;
 }
 
-.card .btn-remove {
+.card .btn-remove,
+.card .btn-edit {
   background-color: #ff7675;
   border: 1px solid #ff7675;
   color: #fff;
@@ -162,12 +163,24 @@ body {
   cursor: pointer;
 }
 
-.card .btn-remove:hover {
+.card .btn-remove:hover,
+.card .btn-edit:hover {
   background-color: #fab1a0;
   border: 1px solid #fab1a0;
 }
 
-.card .btn-remove svg {
+.card .btn-edit {
+  background-color: #fdcb6e;
+  border-color: #fdcb6e;
+}
+
+.card .btn-edit:hover {
+  background-color: #ffeaa7;
+  border-color:#ffeaa7;
+}
+
+.card .btn-remove svg,
+.card .btn-edit svg {
   vertical-align: middle;
   fill: #fff;
 }

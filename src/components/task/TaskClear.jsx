@@ -31,7 +31,7 @@ const TaskClear = () => {
     }
 
     return (
-        (tasks.length !== 0 && !loading) && (
+        (tasks.length !== 0 || !loading) && (
             <>
                 <Button className='btn-clear' handleClick={handleRemoveTask}>
                     <FaTrashAlt /> Clear All

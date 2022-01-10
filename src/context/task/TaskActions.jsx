@@ -13,7 +13,15 @@ const getAll = async () => {
 
 const add = async (task) => {
     const response = await taskAxios.post('', task, {
-        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    return response.data
+};
+
+const update = async (id, task) => {
+    const response = await taskAxios.put(`${id}`, task, {
         headers: {
             'Content-Type': 'application/json'
         }
@@ -22,18 +30,19 @@ const add = async (task) => {
 };
 
 const remove = async (id) => {
-    const response = await taskAxios.delete(`${id}`, { method: 'DELETE' })
+    const response = await taskAxios.delete(`${id}`)
     return response.data
 };
 
 const removeAll = async () => {
-    const response = await taskAxios.delete('', { method: 'DELETE' })
+    const response = await taskAxios.delete('')
     return response.data
 };
 
 const TaskActions = {
     getAll,
     add,
+    update,
     remove,
     removeAll
 }
